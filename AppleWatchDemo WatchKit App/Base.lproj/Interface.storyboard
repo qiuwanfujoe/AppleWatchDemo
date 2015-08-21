@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="AppleWatchDemo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" height="38" alignment="center" verticalAlignment="center" text="你猜的是：3" textAlignment="center" id="OHX-d7-vpg">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="center" title="猜数字" id="9tR-Cj-h4R">
+                            <connections>
+                                <action selector="startGuess" destination="AgC-eL-Hgc" id="2T8-OV-kcd"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" verticalAlignment="bottom" minimumScaleFactor="0.5" id="gbd-cd-2ec"/>
+                        <slider width="1" alignment="left" value="0.59999999999999998" steps="5" id="MTL-NZ-koA">
+                            <connections>
+                                <action selector="updateGuess:" destination="AgC-eL-Hgc" id="UsV-bD-N3v"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="guessLabel" destination="OHX-d7-vpg" id="PjY-zb-xuf"/>
+                        <outlet property="guessSlider" destination="MTL-NZ-koA" id="WGW-db-Gq0"/>
+                        <outlet property="resultLabel" destination="gbd-cd-2ec" id="nTS-Yz-0rb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="312" y="249"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="q8l-Ph-P5E">
+            <objects>
+                <notificationController id="V43-of-MlC">
+                    <items>
+                        <label alignment="left" text="奖品：海滩一日游" id="ZmR-JF-Z42"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="TestNotification" id="rjs-De-pHq"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="ZmR-JF-Z42" id="ere-d9-wEw"/>
+                        <segue destination="LB1-gM-o6y" kind="relationship" relationship="dynamicNotificationInterface" id="zox-ON-x8w"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="312" y="787"/>
+        </scene>
+        <!--DemoWK Notification Controller-->
+        <scene sceneID="nmH-vV-tdX">
+            <objects>
+                <controller id="LB1-gM-o6y" customClass="DemoWKNotificationController" customModule="AppleWatchDemo_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="RMK-qV-Naj">
+                            <items>
+                                <label alignment="left" text="奖品：海滩一日游" id="OZw-ab-dyA"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="e9f-ZO-peR">
+                            <items>
+                                <imageView alignment="left" image="ttd" id="gyP-Vd-1u2"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="575" y="826.5"/>
+        </scene>
+        <!--BonusInterfaceController-->
+        <scene sceneID="1b9-NI-1Sj">
+            <objects>
+                <controller identifier="BonusInterfaceController" id="Z2X-OH-mJ7" customClass="BonusInterfaceController" customModule="AppleWatchDemo_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="奖品：海滩一日游" id="O4h-pV-t4x"/>
+                        <imageView width="136" height="151" alignment="left" image="ttd" id="Pl4-O3-CxX"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="591" y="386"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="Pwv-h6-3Ch">
+            <objects>
+                <glanceController id="Qu8-mr-1Cy" customClass="GlanceController" customModule="AppleWatchDemo_WatchKit_Extension">
+                    <items>
+                        <group alignment="left" id="ebC-YY-9ft">
+                            <items>
+                                <imageView alignment="left" image="ttd" id="CMU-mg-0nP"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="M1u-0a-SHi">
+                            <items>
+                                <label alignment="left" text="奖品：海滩一日游" id="xrt-8x-pFm"/>
+                            </items>
+                        </group>
+                    </items>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="312" y="484"/>
+        </scene>
+    </scenes>
+</document>
